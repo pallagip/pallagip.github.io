@@ -1,61 +1,66 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: black; /* Change background color to black */
+    background-color: black;
     color: white;
     margin: 0;
-    padding: 0;
+    /* Add bottom padding to the body to create space below the 'Show More' button */
+    padding: 0 0 50px 0; /* Adjust the 50px to whatever amount of padding you desire */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Aligns content vertically in the center */
-    align-items: center; /* Aligns content horizontally in the center */
-    min-height: 100vh; /* Minimum height of viewport */
+    align-items: center;
+    min-height: 100vh;
 }
 
 nav {
     width: 100%;
-    margin-bottom: 20px; /* Adds space between nav and title */
+    margin-bottom: 20px;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Use flexbox for horizontal alignment */
-    justify-content: center; /* Center items horizontally */
-    gap: 20px; /* Adds space between navigation items */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 1.5em; /* Increase the font size */
-    padding: 10px; /* Add padding for clickable area */
+    font-size: 1.5em;
+    padding: 10px;
 }
 
 .content {
     text-align: center;
-    max-width: 800px; /* Set a max-width for content */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
     font-size: 3em;
     font-weight: bold;
-    margin: 20px 0; /* Add margin above and below the title */
+    margin: 20px 0;
 }
 
 p {
     font-size: 1.5em;
-    margin: 10px 0; /* Add margin above and below paragraphs */
+    margin: 10px 0;
 }
 
 .youtube-container {
     position: relative;
     width: 100%; /* Full width on mobile */
-    padding-bottom: 56.25%; /* Aspect ratio for 16:9, adjust if necessary */
+    padding-bottom: 177.77%; /* Aspect ratio for 9:16 vertical video on mobile */
     overflow: hidden;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
     border-radius: 5px;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .youtube-container iframe {
@@ -67,8 +72,38 @@ p {
     border-radius: 5px;
 }
 
+.show-more-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    margin-top: 20px;
+}
+
 @media only screen and (min-width: 601px) {
-    .content, .youtube-container {
-        width: 33.33%; /* One third of the screen width on larger screens */
+    .content {
+        height: auto;
+        justify-content: flex-start;
+    }
+
+    .youtube-container {
+        width: 35%; /* Adjusted width to 35% of the screen width on larger screens */
+        padding-bottom: calc(35% * (16 / 9)); /* Adjusted aspect ratio for 9:16 vertical video */
+        height: 0; /* Height is controlled by padding */
+    }
+
+    .show-more-button {
+        width: 150px; /* Larger diameter for larger screens */
+        height: 150px;
+        font-size: 1.5em;
+        margin-top: 30px; /* Increased space from the video above */
     }
 }
