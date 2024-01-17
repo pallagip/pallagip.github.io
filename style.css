@@ -3,7 +3,7 @@ body {
     background-color: darkblue;
     color: white;
     margin: 0;
-    padding: 0;
+    padding-top: 100px; /* Added padding at the top */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,6 +14,7 @@ body {
 nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 0; /* Reset margin for consistency */
 }
 
 nav ul li {
@@ -35,8 +36,26 @@ h1 {
     font-weight: bold;
 }
 
+/* Styles for the video */
+video {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Media queries */
 @media only screen and (max-width: 600px) {
     h1 {
         font-size: 1.5em;
+    }
+
+    video {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    video {
+        width: 33.33%;
     }
 }
