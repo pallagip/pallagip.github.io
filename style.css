@@ -54,13 +54,15 @@ p {
 
 .youtube-container {
     position: relative;
-    width: 100%; /* Full width on mobile */
-    padding-bottom: 177.77%; /* Aspect ratio for 9:16 vertical video on mobile */
+    width: 95%; /* Adjusted width to 95% on mobile */
+    padding-bottom: calc(95% * (16 / 9)); /* Adjusted aspect ratio for 9:16 vertical video */
     overflow: hidden;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
     border-radius: 5px;
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: auto; /* These two margin settings center the video */
+    margin-right: auto; /* horizontally on the page */
 }
 
 .youtube-container iframe {
@@ -98,6 +100,8 @@ p {
         width: 35%; /* Adjusted width to 35% of the screen width on larger screens */
         padding-bottom: calc(35% * (16 / 9)); /* Adjusted aspect ratio for 9:16 vertical video */
         height: 0; /* Height is controlled by padding */
+        margin-left: auto; /* Center the container */
+        margin-right: auto; /* Center the container */
     }
 
     .show-more-button {
