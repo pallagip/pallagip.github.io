@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProDiabetics</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .youtube-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 177.77%; /* Aspect ratio for 9:16 */
+            overflow: hidden;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); /* Hard shadow border */
+            border-radius: 5px; /* Rounded corners */
+            margin-top: 20px; /* Vertical padding */
+        }
+
+        .youtube-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px; /* Rounded corners for iframe */
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -20,13 +40,10 @@
         <p>To Better the Lives of</p>
         <p>Type One Diabetics</p>
 
-        <!-- Video Section -->
-        <video controls>
-            <source src="./PRODIABETICS.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        
-               
+        <!-- Embed YouTube Video -->
+        <div class="youtube-container">
+            <iframe src="https://www.youtube.com/embed/-UcovkSSizk" frameborder="0" allowfullscreen></iframe>
+        </div>
     </div>
 </body>
 </html>
